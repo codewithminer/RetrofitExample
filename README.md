@@ -1,4 +1,4 @@
-#Movie App with TMDB API
+# Movie App with TMDB API
 A simple Android application that demonstrates the implementation of MVVM architecture pattern using Retrofit, Data Binding, and LiveData to fetch and display popular movies from The Movie Database (TMDB) API.
 
 ## Features
