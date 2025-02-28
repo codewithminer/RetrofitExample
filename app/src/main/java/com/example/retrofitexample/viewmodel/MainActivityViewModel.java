@@ -1,0 +1,29 @@
+package com.example.retrofitexample.viewmodel;
+
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
+
+import com.example.retrofitexample.model.Movie;
+import com.example.retrofitexample.model.MovieRepository;
+
+import java.util.List;
+
+public class MainActivityViewModel extends AndroidViewModel {
+    // ViewModel: suitable for non-Android-specific logic
+    // AndroidViewModel: used when ViewModel class needs to
+    // access Android-specific components(resources, preferences or application context)
+
+    MovieRepository repository;
+
+    public MainActivityViewModel(@NonNull Application application) {
+        super(application);
+        this.repository = new MovieRepository(application);
+    }
+
+    public LiveData<List<Movie>> getAllMovies(){
+        return repository.getMutableLiveData();
+    }
+}
